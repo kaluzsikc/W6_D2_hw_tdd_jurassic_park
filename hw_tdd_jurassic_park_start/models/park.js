@@ -9,8 +9,8 @@ Park.prototype.addDinosaur = function (dinosaur) {
   this.dinosaurCollection.push(dinosaur);
 }
 
-Park.prototype.removeDinosaurByName = function (dinosaur) {
-  const indexOfDinosaur = this.dinosaurCollection.indexOf(dinosaur.name);
+Park.prototype.removeDinosaur = function (dinosaur) {
+  const indexOfDinosaur = this.dinosaurCollection.indexOf(dinosaur);
   this.dinosaurCollection.splice(indexOfDinosaur, 1)
 }
 

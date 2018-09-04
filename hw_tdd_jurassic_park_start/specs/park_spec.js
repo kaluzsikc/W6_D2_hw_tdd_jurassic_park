@@ -39,12 +39,11 @@ describe('Park', function() {
     assert.strictEqual(actual, 5);
   });
 
-  // it('should be able to remove a dinosaur from its collection', function (){
-  //     park.removeDinosaurByName('t-rex');
-  //     const expected = ['Triceraptor', 'Brachiosaurus', 'Mosasaurus'];
-  //     const actual = park.dinosaurs;
-  //     assert.deepStrictEqual(actual, expected);
-  // });
+  it('should be able to remove a dinosaur from its collection', function (){
+      park.removeDinosaur(dinosaur1);
+      const actual = park.dinosaurCollection.length;
+      assert.strictEqual(actual, 3);
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
