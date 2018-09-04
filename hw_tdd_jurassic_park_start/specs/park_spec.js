@@ -15,7 +15,7 @@ describe('Park', function() {
     dinosaur4 = new Dinosaur('Apatosaurus', 'herbivorous', 40);
     dinosaur5 = new Dinosaur('T-rex', 'carnivore', 50);
 
-    dinosaurCollection = [dinosaur1, dinosaur2, dinosaur3, dinosaur4]
+    park.dinosaurCollection = [dinosaur1, dinosaur2, dinosaur3, dinosaur4];
   });
 
   it('should have a name', function () {
@@ -29,15 +29,15 @@ describe('Park', function() {
   });
 
   it('should have a collection of dinosaurs', function () {
-    const actual = dinosaurCollection.length;
-    assert.strictEqual(actual, 4)
+    const actual = park.dinosaurCollection.length;
+    assert.strictEqual(actual, 4);
   });
 
-  // it('should be able to add a dinosaur to its collection', function (){
-  //   park.addDinosaurToCollection('Dingozaurus');
-  //   const actual = park.dinosaurCollection.length;
-  //   assert.strictEqual(actual, 5);
-  // });
+  it('should be able to add a dinosaur to its collection', function (){
+    park.addDinosaur(dinosaur5);
+    const actual = park.dinosaurCollection.length;
+    assert.strictEqual(actual, 5);
+  });
 
   // it('should be able to remove a dinosaur from its collection', function (){
   //     park.removeDinosaurByName('t-rex');

@@ -5,7 +5,7 @@ const Park = function( name, ticketPrice) {
 }
 
 
-Park.prototype.addDinosaurToCollection = function (dinosaur) {
+Park.prototype.addDinosaur = function (dinosaur) {
   this.dinosaurCollection.push(dinosaur);
 }
 
