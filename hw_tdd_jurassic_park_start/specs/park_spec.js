@@ -12,7 +12,7 @@ describe('Park', function() {
     dinosaur1 = new Dinosaur('Triceraptor', 'carnivore', 10);
     dinosaur2 = new Dinosaur('Brachiosaurus', 'plasterina', 20);
     dinosaur3 = new Dinosaur('Mosasaurus', 'herbivorous', 30);
-    dinosaur4 = new Dinosaur('Apatosaurus', 'herbivorous', 40);
+    dinosaur4 = new Dinosaur('Mosasaurus', 'herbivorous', 40);
     dinosaur5 = new Dinosaur('T-rex', 'carnivore', 50);
 
     park.dinosaurCollection = [dinosaur1, dinosaur2, dinosaur3, dinosaur4];
@@ -33,22 +33,32 @@ describe('Park', function() {
     assert.strictEqual(actual, 4);
   });
 
-  it('should be able to add a dinosaur to its collection', function (){
+  it('should be able to add a dinosaur to its collection', function () {
     park.addDinosaur(dinosaur5);
     const actual = park.dinosaurCollection.length;
     assert.strictEqual(actual, 5);
   });
 
-  it('should be able to remove a dinosaur from its collection', function (){
-      park.removeDinosaur(dinosaur1);
-      const actual = park.dinosaurCollection.length;
-      assert.strictEqual(actual, 3);
+  it('should be able to remove a dinosaur from its collection', function () {
+    park.removeDinosaur(dinosaur1);
+    const actual = park.dinosaurCollection.length;
+    assert.strictEqual(actual, 3);
   });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function () {
+    const actual = park.popularDinosaur();
+    assert.strictEqual(actual, dinosaur5);
+  });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function () {
+    const actual = (park.findBySpecies('Mosasaurus')).length;
+    assert.strictEqual(actual, 2);
+  });
 
-  it('should be able to remove all dinosaurs of a particular species');
+  it('should be able to remove all dinosaurs of a particular species', function () {
+    park.removeBySpecies('Mosasaurus');
+    const actual = park.dinosaurCollection.length;
+    assert.strictEqual(actual, 0);
+  });
 
 });
